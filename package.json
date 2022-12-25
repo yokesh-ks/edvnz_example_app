@@ -11,6 +11,8 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@edvnz/provider": "1.0.3",
+    "@edvnz/theme": "^1.0.6",
     "commitizen": "^4.2.6",
     "cz-conventional-changelog": "^3.3.0",
     "react": "18.1.0",
