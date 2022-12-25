@@ -4,10 +4,9 @@ import EdvnzTheme from '@edvnz/provider';
 
 const Home = () => {
   const {theme} = useContext(EdvnzTheme);
-  console.log(theme.colors);
   return (
     <View>
-      <Text>Edvnz Example</Text>
+      <Text style={{color: theme.colors.textPrimary}}>Edvnz Example</Text>
     </View>
   );
 };
