@@ -6,15 +6,26 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import type {Node} from 'react';
+import React, {useState, useEffect} from 'react';
 import {SafeAreaView} from 'react-native';
 import Home from './src/screen/home';
+import {DarkTheme, LightTheme} from '@edvnz/theme';
+import EdvnzTheme from '@edvnz/provider';
 
-const App: () => Node = () => {
+const App = () => {
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [theme, setTheme] = useState(DarkTheme);
+
+  useEffect(() => {
+    setTheme(isDarkTheme ? DarkTheme : LightTheme);
+  }, [isDarkTheme]);
+
+  const value = {theme};
   return (
     <SafeAreaView>
-      <Home />
+      <EdvnzTheme.Provider value={value}>
+        <Home />
+      </EdvnzTheme.Provider>
     </SafeAreaView>
   );
 };
